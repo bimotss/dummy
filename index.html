@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexaWorks | Company Profile</title>
+  <meta
+    name="description"
+    content="NexaWorks company profile: strategy, product design, and digital operations for growing businesses."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet"
+  >
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --surface: #ffffff;
+      --ink: #172026;
+      --muted: #64707d;
+      --line: #dfe5ec;
+      --teal: #047c7a;
+      --teal-dark: #035f5d;
+      --coral: #ef6f5e;
+      --amber: #f5b84b;
+      --navy: #21344d;
+      --shadow: 0 18px 45px rgba(23, 32, 38, 0.12);
+      --radius: 8px;
+      --container: min(1120px, calc(100% - 40px));
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid rgba(223, 229, 236, 0.82);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.08rem;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: white;
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.93rem;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      border-radius: var(--radius);
+      padding: 10px 12px;
+    }
+
+    .nav-links a:hover {
+      background: #eef3f6;
+      color: var(--ink);
+    }
+
+    .icon-button {
+      display: none;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      padding: 12px 18px;
+      background: var(--teal);
+      color: white;
+      font-weight: 700;
+      line-height: 1;
+      cursor: pointer;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      white-space: nowrap;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      background: var(--teal-dark);
+      box-shadow: 0 14px 28px rgba(4, 124, 122, 0.2);
+    }
+
+    .button.secondary {
+      border-color: var(--line);
+      background: white;
+      color: var(--ink);
+    }
+
+    .button.secondary:hover {
+      background: #eef3f6;
+      box-shadow: none;
+    }
+
+    .hero {
+      background: var(--surface);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.88fr);
+      gap: 44px;
+      align-items: center;
+      min-height: calc(100svh - 148px);
+      padding: 54px 0 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 18px;
+      color: var(--teal);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--coral);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin-bottom: 20px;
+      color: var(--ink);
+      font-size: clamp(2.45rem, 7vw, 5.35rem);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 630px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.16rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 34px;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 720px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .point {
+      min-height: 94px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: #fbfcfd;
+    }
+
+    .point strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1.45rem;
+      line-height: 1.1;
+    }
+
+    .point span {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero-media {
+      position: relative;
+      min-height: 500px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      object-fit: cover;
+    }
+
+    .media-caption {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      left: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: rgba(23, 32, 38, 0.76);
+      color: white;
+      backdrop-filter: blur(16px);
+    }
+
+    .media-caption strong {
+      display: block;
+      margin-bottom: 2px;
+      font-size: 0.98rem;
+    }
+
+    .media-caption span {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.88rem;
+    }
+
+    .caption-icon {
+      display: grid;
+      flex: 0 0 auto;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      border-radius: var(--radius);
+      background: var(--amber);
+      color: var(--ink);
+    }
+
+    section {
+      padding: 84px 0;
+    }
+
+    #about {
+      padding-top: 54px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 30px;
+    }
+
+    .section-head h2 {
+      max-width: 620px;
+      margin-bottom: 0;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      max-width: 440px;
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .about-image {
+      min-height: 430px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--navy);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+    }
+
+    .about-panel {
+      display: grid;
+      align-content: center;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(24px, 4vw, 42px);
+      background: var(--surface);
+    }
+
+    .about-panel h3 {
+      margin-bottom: 14px;
+      font-size: clamp(1.45rem, 3vw, 2.15rem);
+      line-height: 1.18;
+    }
+
+    .about-panel p {
+      color: var(--muted);
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .value {
+      border-left: 3px solid var(--coral);
+      padding: 8px 0 8px 14px;
+    }
+
+    .value strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .value span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .services {
+      background: #edf3f6;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .service-card,
+    .process-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      background: var(--surface);
+    }
+
+    .service-icon {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 22px;
+      place-items: center;
+      border-radius: var(--radius);
+      background: #e1f3f0;
+      color: var(--teal);
+    }
+
+    .service-card:nth-child(2) .service-icon {
+      background: #fff1d4;
+      color: #8d5b00;
+    }
+
+    .service-card:nth-child(3) .service-icon {
+      background: #ffe7e1;
+      color: #a84231;
+    }
+
+    .service-card h3,
+    .process-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
+
+    .service-card p,
+    .process-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .work-strip {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 26px;
+      align-items: center;
+      border-radius: var(--radius);
+      padding: clamp(24px, 5vw, 46px);
+      background: var(--ink);
+      color: white;
+    }
+
+    .work-strip h2 {
+      margin-bottom: 12px;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.08;
+    }
+
+    .work-strip p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .result {
+      border-radius: var(--radius);
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .result strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--amber);
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .result span {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .step {
+      display: inline-grid;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 22px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--navy);
+      color: white;
+      font-weight: 800;
+    }
+
+    .contact {
+      background: var(--surface);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .contact-panel {
+      border-radius: var(--radius);
+      padding: clamp(24px, 4vw, 38px);
+      background: #eef3f6;
+    }
+
+    .contact-panel h2 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.08;
+    }
+
+    .contact-panel p {
+      color: var(--muted);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ink);
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .contact-item i {
+      display: grid;
+      flex: 0 0 auto;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      border-radius: var(--radius);
+      background: white;
+      color: var(--teal);
+    }
+
+    .form {
+      display: grid;
+      gap: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(20px, 4vw, 32px);
+      background: var(--surface);
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 13px 14px;
+      background: #fbfcfd;
+      color: var(--ink);
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 4px rgba(4, 124, 122, 0.12);
+    }
+
+    textarea {
+      min-height: 138px;
+      resize: vertical;
+    }
+
+    .form-note {
+      min-height: 22px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      background: var(--surface);
+      color: var(--muted);
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      font-size: 0.92rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 980px) {
+      .icon-button {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 72px;
+        right: 20px;
+        left: 20px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 10px;
+        background: white;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.is-open {
+        display: flex;
+      }
+
+      .nav-links a,
+      .nav-links .button {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .work-strip,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        min-height: auto;
+        padding-top: 50px;
+      }
+
+      .hero-media,
+      .hero-media img {
+        min-height: 360px;
+      }
+
+      .service-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .section-head {
+        display: grid;
+      }
+    }
+
+    @media (max-width: 680px) {
+      :root {
+        --container: min(100% - 28px, 1120px);
+      }
+
+      .nav {
+        min-height: 66px;
+      }
+
+      .nav-links {
+        top: 66px;
+        right: 14px;
+        left: 14px;
+      }
+
+      h1 {
+        font-size: clamp(2.35rem, 13vw, 3.7rem);
+      }
+
+      section {
+        padding: 58px 0;
+      }
+
+      .hero-grid {
+        gap: 28px;
+        padding: 28px 0 28px;
+      }
+
+      .hero-actions,
+      .button {
+        width: 100%;
+      }
+
+      .service-grid,
+      .process-grid,
+      .results,
+      .field-row,
+      .values {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-points {
+        grid-template-columns: repeat(3, minmax(134px, 1fr));
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .point {
+        min-height: 78px;
+        padding: 13px;
+      }
+
+      .hero-media,
+      .hero-media img,
+      .about-image,
+      .about-image img {
+        min-height: 250px;
+      }
+
+      #about {
+        padding-top: 34px;
+      }
+      }
+
+      .media-caption {
+        align-items: flex-start;
+      }
+
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="NexaWorks home">
+        <span class="brand-mark">NW</span>
+        <span>NexaWorks</span>
+      </a>
+
+      <button class="icon-button" type="button" aria-label="Open menu" aria-expanded="false" data-menu-button>
+        <i data-lucide="menu"></i>
+      </button>
+
+      <div class="nav-links" data-menu>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#contact" class="button">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid container">
+        <div>
+          <p class="eyebrow">Company profile</p>
+          <h1 id="hero-title">NexaWorks builds sharper digital businesses.</h1>
+          <p class="hero-copy">
+            We help growing teams turn ideas, operations, and customer journeys into simple digital systems that feel clear, useful, and ready to scale.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">
+              Start a Project
+              <i data-lucide="arrow-right"></i>
+            </a>
+            <a class="button secondary" href="#services">
+              Explore Services
+              <i data-lucide="list-checks"></i>
+            </a>
+          </div>
+
+          <ul class="hero-points">
+            <li class="point">
+              <strong>8+</strong>
+              <span>Years in digital consulting</span>
+            </li>
+            <li class="point">
+              <strong>120</strong>
+              <span>Projects delivered</span>
+            </li>
+            <li class="point">
+              <strong>32%</strong>
+              <span>Average workflow improvement</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-media">
+          <img
+            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&amp;fit=crop&amp;w=1200&amp;q=82"
+            alt="Business team collaborating around a table"
+          >
+          <div class="media-caption">
+            <div>
+              <strong>Strategy, UX, and operations in one team.</strong>
+              <span>Designed for practical business outcomes.</span>
+            </div>
+            <span class="caption-icon" aria-hidden="true">
+              <i data-lucide="sparkles"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="about-title">A focused partner for modern company growth.</h2>
+          <p>
+            NexaWorks combines business analysis, product thinking, and clean execution so teams can move with more confidence.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&amp;fit=crop&amp;w=1100&amp;q=82"
+              alt="Team reviewing plans on a glass board"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="about-panel">
+            <h3>We simplify the way companies plan, build, and improve digital work.</h3>
+            <p>
+              Our team works closely with founders, managers, and operators to understand the real business context before designing the solution. The result is a company profile, product, or system that looks professional and works naturally for the people using it.
+            </p>
+            <p>
+              From early strategy to launch support, we keep the process transparent, collaborative, and measurable.
+            </p>
+
+            <div class="values">
+              <div class="value">
+                <strong>Clear</strong>
+                <span>Simple structure and decisions.</span>
+              </div>
+              <div class="value">
+                <strong>Useful</strong>
+                <span>Designed around real workflows.</span>
+              </div>
+              <div class="value">
+                <strong>Scalable</strong>
+                <span>Built for the next stage.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="services-title">Services that connect business goals to execution.</h2>
+          <p>
+            Choose a focused engagement or combine services for a complete digital improvement program.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">
+              <i data-lucide="compass"></i>
+            </span>
+            <h3>Business Strategy</h3>
+            <p>
+              Market positioning, service mapping, operational priorities, and practical roadmaps for better decisions.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">
+              <i data-lucide="layout-dashboard"></i>
+            </span>
+            <h3>UX and Product Design</h3>
+            <p>
+              Websites, company profiles, dashboards, and customer journeys shaped around clarity and conversion.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">
+              <i data-lucide="settings-2"></i>
+            </span>
+            <h3>Digital Operations</h3>
+            <p>
+              Workflow audits, automation planning, process documentation, and implementation support for teams.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="results-title">
+      <div class="container">
+        <div class="work-strip">
+          <div>
+            <p class="eyebrow">Impact</p>
+            <h2 id="results-title">Practical outcomes, not noisy deliverables.</h2>
+            <p>
+              Every engagement starts with a clear target, then moves through research, design, delivery, and measurement.
+            </p>
+          </div>
+
+          <div class="results">
+            <div class="result">
+              <strong>4.9/5</strong>
+              <span>Average client satisfaction</span>
+            </div>
+            <div class="result">
+              <strong>6 wks</strong>
+              <span>Typical profile-to-launch timeline</span>
+            </div>
+            <div class="result">
+              <strong>18</strong>
+              <span>Industries supported</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="process-title">A clean process from first call to launch.</h2>
+          <p>
+            The workflow is simple enough to follow, but structured enough to keep the project moving.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card">
+            <span class="step">1</span>
+            <h3>Discover</h3>
+            <p>Understand goals, customers, operations, competitors, and the current business story.</p>
+          </article>
+          <article class="process-card">
+            <span class="step">2</span>
+            <h3>Shape</h3>
+            <p>Define the message, structure, UX flow, visual direction, and success measures.</p>
+          </article>
+          <article class="process-card">
+            <span class="step">3</span>
+            <h3>Build</h3>
+            <p>Design and develop the profile, website, or digital system with clear review cycles.</p>
+          </article>
+          <article class="process-card">
+            <span class="step">4</span>
+            <h3>Improve</h3>
+            <p>Launch, measure, refine content, and support the next round of business growth.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-panel">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Let's build a profile your company can grow with.</h2>
+          <p>
+            Tell us what you are trying to improve. We will respond with next steps, estimated timeline, and the best starting point.
+          </p>
+
+          <div class="contact-list">
+            <a class="contact-item" href="mailto:hello@nexaworks.co">
+              <i data-lucide="mail"></i>
+              hello@nexaworks.co
+            </a>
+            <a class="contact-item" href="tel:+6281234567890">
+              <i data-lucide="phone"></i>
+              +62&nbsp;812&nbsp;3456&nbsp;7890
+            </a>
+            <span class="contact-item">
+              <i data-lucide="map-pin"></i>
+              Jakarta, Indonesia
+            </span>
+          </div>
+        </div>
+
+        <form class="form" data-contact-form>
+          <div class="field-row">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@company.com" autocomplete="email" required>
+            </label>
+          </div>
+          <label>
+            Company
+            <input type="text" name="company" placeholder="Company name" autocomplete="organization">
+          </label>
+          <label>
+            Message
+            <textarea name="message" placeholder="What would you like to build or improve?" required></textarea>
+          </label>
+          <button class="button" type="submit">
+            Send Message
+            <i data-lucide="send"></i>
+          </button>
+          <p class="form-note" aria-live="polite" data-form-note></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>&copy; 2026 NexaWorks. All rights reserved.</span>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const menu = document.querySelector("[data-menu]");
+      const button = document.querySelector("[data-menu-button]");
+      const form = document.querySelector("[data-contact-form]");
+      const formNote = document.querySelector("[data-form-note]");
+
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+
+      button.addEventListener("click", () => {
+        const isOpen = menu.classList.toggle("is-open");
+        button.setAttribute("aria-expanded", String(isOpen));
+        button.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+      });
+
+      menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menu.classList.remove("is-open");
+          button.setAttribute("aria-expanded", "false");
+          button.setAttribute("aria-label", "Open menu");
+        });
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const data = new FormData(form);
+        const name = data.get("name");
+        const email = data.get("email");
+        const company = data.get("company") || "Not specified";
+        const message = data.get("message");
+        const subject = encodeURIComponent(`Project inquiry from ${name}`);
+        const body = encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\nMessage:\n${message}`
+        );
+
+        formNote.textContent = "Opening your email app with the message ready.";
+        window.location.href = `mailto:hello@nexaworks.co?subject=${subject}&body=${body}`;
+      });
+    });
+  </script>
+</body>
+</html>
